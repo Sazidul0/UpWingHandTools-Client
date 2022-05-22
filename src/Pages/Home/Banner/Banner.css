@@ -1,0 +1,13 @@
+/* Responsive */
+@media only screen and (max-width: 576px) {
+    .banner-container {
+        height: 500px !important;
+        /* width: fit-content; */
+    }
+
+    .banner-text-container {
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+
+}

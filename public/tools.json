@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Drill",
+        "img": "https://i.ibb.co/0cJ6vyv/Drill.jpg",
+        "description": " Professional Electric Drill Machine 13mm 1500W",
+        "minQuantity": 400,
+        "availableQuantity": 2226,
+        "price": 24
+    },
+    {
+        "_id": 2,
+        "name": "Hammer",
+        "img": "https://i.ibb.co/NxmXp7V/hammer.webp",
+        "description": "Hammer With Wood Handle and steel Material",
+        "minQuantity": 380,
+        "availableQuantity": 1600,
+        "price": 12
+    },
+    {
+        "_id": 3,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/2SfZsB0/range.jpg",
+        "description": "Adjustable Slywrench Spanner 8 with rubber grip",
+        "minQuantity": 200,
+        "availableQuantity": 1800,
+        "price": 19
+    },
+    {
+        "_id": 4,
+        "name": "Wire Cutter",
+        "img": "https://i.ibb.co/QJ5sy5x/plus.webp",
+        "description": "Steel tool factory of superior quality and it is easy to use",
+        "minQuantity": 290,
+        "availableQuantity": 1100,
+        "price": 13
+    },
+    {
+        "_id": 5,
+        "name": "Soldering Iron",
+        "img": "https://i.ibb.co/D144vTL/soldering-Iron.jpg",
+        "description": "60 Watts Soldering Iron With Indicator",
+        "minQuantity": 500,
+        "availableQuantity": 3200,
+        "price": 14
+    },
+    {
+        "_id": 6,
+        "name": "Screw Driver",
+        "img": "https://i.ibb.co/BfmsTvt/screwdriver.jpg",
+        "description": "Screwdriver, CERTIFIED ORIGINAL TOLSEN BRAND",
+        "minQuantity": 600,
+        "availableQuantity": 5500,
+        "price": 8
+    }
+]
