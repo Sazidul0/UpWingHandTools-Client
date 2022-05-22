@@ -24,10 +24,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link class="btn btn-ghost normal-case text-xl" to='/'>
-                        <img className='w-10' src={icon} alt="Tools Icon" />
+                        <img className='w-10' src={icon} alt="Tools Icon" /><h3 className='website-name text-3xl text-teal-500'>Upwing Hand Tools</h3>
                     </Link>
                 </div>
-                <div class="navbar-center hidden lg:flex">
+                <div class="navbar-center hidden lg:flex ">
                     <ul class="menu menu-horizontal p-0 text-white">
                         {menuItems}
                     </ul>

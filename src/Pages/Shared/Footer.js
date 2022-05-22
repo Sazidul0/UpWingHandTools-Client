@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="bg-[url('/src/images/footer.png')] text-teal-400 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 py-10">
             <div className=''>
-                <h2 className='text-3xl'>Upwing Hand Tools</h2>
+                <h2 className='text-4xl website-name'>Upwing Hand Tools</h2>
                 <p>Upwing Hand Tools is a tools manufacturer website. It provides various tools acording to your needs. It provides higth quality products, However If You don't like the product. You can also return the products.</p>
             </div>
             <div className=''>
