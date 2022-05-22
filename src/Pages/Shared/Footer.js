@@ -1,4 +1,7 @@
 import React from 'react';
+import location from '../../images/icon/pin.png'
+import phone from '../../images/icon/phone-call.png'
+import mail from '../../images/icon/email.png'
 
 const Footer = () => {
     return (
@@ -10,14 +13,16 @@ const Footer = () => {
             <div className=''>
                 <h3 className='text-2xl'>What we do?</h3>
                 <p>We make thousands of tools and provide to the seller around the world.</p>
+                <div className='bg-teal-700 mx-auto ' style={{ height: '2px' }}></div>
                 <p>We have 24 hour support system which is always ready for you.</p>
+                <div className='bg-teal-700 mx-auto ' style={{ height: '2px' }}></div>
                 <p>30 days return policy</p>
             </div>
             <div>
                 <h3 className='text-2xl'>Contact Information</h3>
-                <p>620 Eighth Avenue, United States of America</p>
-                <p>+ 555 786 897 Mon-Sat, 9:00am-7:00pm</p>
-                <p>upwingtools@gmail.com</p>
+                <p><img className='w-5 inline' src={location} alt="Location Png" /> 620 Eighth Avenue, <br /> <span className='ml-6'>United States of America</span></p>
+                <p><img className='w-5 inline' src={phone} alt="Phone Number Png" /> + 555 786 897<br /><span className='ml-6'>Mon-Sat, 9:00am-7:00pm</span></p>
+                <p><img className='w-5 inline' src={mail} alt="Email Png" /> upwingtools@gmail.com</p>
             </div>
         </div>
     );

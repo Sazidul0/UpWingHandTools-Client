@@ -15,7 +15,7 @@ const BusinessSummary = () => {
             <div className='py-5'>
                 <h2 className='text-4xl flex justify-center text-teal-500 font-bold uppercase'>Millions Users & Business Trust Us</h2>
                 <h3 className='text-2xl flex justify-center'>We Try to Understand Users Expectation</h3>
-                {/* <div className='bg-teal-500 flex justify-center w-12' style={{ height: '2px' }}></div> */}
+                <div className='bg-teal-500 mx-auto w-1/2 my-2' style={{ height: '2px' }}></div>
             </div>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-4 sm:px-8 md:px-10 lg:px-48'>
                 <div className='flex justify-center'>
