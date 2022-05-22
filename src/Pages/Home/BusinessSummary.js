@@ -3,8 +3,13 @@ import country from '../../images/coronavirus.png';
 import projects from '../../images/tool-box.png';
 import clients from '../../images/group.png';
 import feedback from '../../images/comment.png';
+import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const BusinessSummary = () => {
+
+
+
     return (
         <div className='mb-28'>
             <div className='py-5'>
@@ -16,28 +21,60 @@ const BusinessSummary = () => {
                 <div className='flex justify-center'>
                     <div className='text-center'>
                         <img className='w-16 ml-2' src={country} alt="Country" />
-                        <h2 className='text-4xl font-bold'>72</h2>
+                        <h2 className='text-4xl font-bold'>
+                            <CountUp end={72} redraw={true}>
+                                {({ countUpRef, start }) => (
+                                    <VisibilitySensor onChange={start} delayedCall>
+                                        <span ref={countUpRef} />
+                                    </VisibilitySensor>
+                                )}
+                            </CountUp>
+                        </h2>
                         <h4 className='text-xl text-teal-500'>Countrys</h4>
                     </div>
                 </div>
                 <div className="flex justify-center">
                     <div className='text-center'>
                         <img className='w-16 ml-14' src={projects} alt="Country" />
-                        <h2 className='text-4xl font-bold'>8000000+</h2>
+                        <h2 className='text-4xl font-bold'>
+                            <CountUp end={8000000} redraw={true} suffix='+'>
+                                {({ countUpRef, start }) => (
+                                    <VisibilitySensor onChange={start} delayedCall>
+                                        <span ref={countUpRef} />
+                                    </VisibilitySensor>
+                                )}
+                            </CountUp>
+                        </h2>
                         <h4 className='text-xl text-teal-500'>Sold Items</h4>
                     </div>
                 </div>
                 <div className="flex justify-center">
                     <div className='text-center'>
                         <img className='w-16 ml-5' src={clients} alt="Country" />
-                        <h2 className='text-4xl font-bold'>7035+</h2>
+                        <h2 className='text-4xl font-bold'>
+                            <CountUp end={7035} redraw={true} suffix='+'>
+                                {({ countUpRef, start }) => (
+                                    <VisibilitySensor onChange={start} delayedCall>
+                                        <span ref={countUpRef} />
+                                    </VisibilitySensor>
+                                )}
+                            </CountUp>
+                        </h2>
                         <h4 className='text-xl text-teal-500'>Happy Clients</h4>
                     </div>
                 </div>
                 <div className="flex justify-center">
                     <div className='text-center'>
                         <img className='w-16 ml-6' src={feedback} alt="Country" />
-                        <h2 className='text-4xl font-bold'>4193+</h2>
+                        <h2 className='text-4xl font-bold'>
+                            <CountUp end={4193} redraw={true} suffix='+'>
+                                {({ countUpRef, start }) => (
+                                    <VisibilitySensor onChange={start} delayedCall>
+                                        <span ref={countUpRef} />
+                                    </VisibilitySensor>
+                                )}
+                            </CountUp>
+                        </h2>
                         <h4 className='text-xl text-teal-500'>Feedback</h4>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/tool/:toolId' element={<CheckOut></CheckOut>}></Route>
       </Routes>
+
+      <Footer></Footer>
     </div>
   );
 }
