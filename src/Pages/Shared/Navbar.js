@@ -6,6 +6,7 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/tools'>Tools</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/login'>Login</Link></li>
@@ -34,7 +35,7 @@ const Navbar = () => {
                 </div>
 
             </div>
-            <div style={{ height: '8px' }} className='bg-black'></div>
+            {/* <div style={{ height: '8px' }} className='bg-black'></div> */}
         </div>
     );
 };

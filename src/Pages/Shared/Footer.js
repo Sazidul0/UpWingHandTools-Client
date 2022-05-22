@@ -5,7 +5,7 @@ import mail from '../../images/icon/email.png'
 
 const Footer = () => {
     return (
-        <div className="bg-[url('/src/images/footer.png')] text-teal-400 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 py-10">
+        <div className="bg-[url('/src/images/footer.png')] text-teal-400 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 py-10 lg:px-48">
             <div className=''>
                 <h2 className='text-4xl website-name'>Upwing Hand Tools</h2>
                 <p>Upwing Hand Tools is a tools manufacturer website. It provides various tools acording to your needs. It provides higth quality products, However If You don't like the product. You can also return the products.</p>
@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className='bg-teal-700 mx-auto ' style={{ height: '2px' }}></div>
                 <p>30 days return policy</p>
             </div>
-            <div>
+            <div className='lg:pl-16'>
                 <h3 className='text-2xl'>Contact Information</h3>
                 <p><img className='w-5 inline' src={location} alt="Location Png" /> 620 Eighth Avenue, <br /> <span className='ml-6'>United States of America</span></p>
                 <p><img className='w-5 inline' src={phone} alt="Phone Number Png" /> + 555 786 897<br /><span className='ml-6'>Mon-Sat, 9:00am-7:00pm</span></p>

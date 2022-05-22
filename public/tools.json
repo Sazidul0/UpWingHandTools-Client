@@ -52,5 +52,14 @@
         "minQuantity": 600,
         "availableQuantity": 5500,
         "price": 8
+    },
+    {
+        "_id": 7,
+        "name": "Hot Air Gun",
+        "img": "https://i.ibb.co/pWc1RW4/hotairgun.webp",
+        "description": "This specially designed heat gun produces a jet of hot air.",
+        "minQuantity": 250,
+        "availableQuantity": 6150,
+        "price": 21
     }
 ]
