@@ -17,6 +17,7 @@ import MyOrders from './Dashboard/MyOrders';
 import PaidOrders from './Dashboard/PaidOrders';
 import UnPaidOrders from './Dashboard/UnPaidOrders';
 import AllUsers from './Dashboard/AllUsers';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path='paid' element={<PaidOrders />}></Route>
           <Route path='unpaid' element={<UnPaidOrders />}></Route>
-          <Route path='users' element={<AllUsers />}></Route>
+          <Route path='users' element={<RequireAdmin><AllUsers /></RequireAdmin>}></Route>
         </Route>
       </Routes>
 

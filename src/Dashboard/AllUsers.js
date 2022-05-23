@@ -30,7 +30,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <UserRow key={user._id} user={user}></UserRow>)
+                            users.map(user => <UserRow key={user._id} user={user} setUsers={setUsers}></UserRow>)
                         }
                     </tbody>
                 </table>
