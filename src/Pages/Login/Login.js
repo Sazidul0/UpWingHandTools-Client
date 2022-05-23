@@ -1,13 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
 
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    // const [token] = useToken(user || gUser)
+    let from = location.state?.from?.pathname || "/";
+
+    if (user || gUser) {
+        navigate(from, { replace: true });
+    }
+
+    // useEffect(() => {
+    //     if (token) {
+    //         navigate(from, { replace: true });
+    //     }
+    // }, [token, from, navigate])
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+
+    let signInError;
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+
 
     const onSubmit = data => {
-        console.log(data);
-        // signInWithEmailAndPassword(data.email, data.password);
+        // console.log(data);
+        signInWithEmailAndPassword(data.email, data.password);
     }
 
     return (
@@ -72,18 +108,18 @@ const Login = () => {
                         </div>
 
 
-                        {/* {signInError} */}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value='Login' />
+                        {signInError}
+                        <input className='btn w-full max-w-xs text-white bg-gradient-to-r from-zinc-600 to-zinc-900 border-0' type="submit" value='Login' />
 
                     </form>
 
-                    <p>New to Doctors Portal? <Link className='text-primary ' to='/signup'>Create New Account</Link></p>
+                    <p>New to Upwing? <Link className='text-primary ' to='/signup'>Create New Account</Link></p>
 
 
                     <div className="divider">OR</div>
                     <button
                         className='btn btn-outline'
-                    // onClick={() => signInWithGoogle()}
+                        onClick={() => signInWithGoogle()}
                     >Continue With Google</button>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 
 const CheckOut = () => {
@@ -14,6 +16,10 @@ const CheckOut = () => {
     }, [toolId])
 
     const { _id, name, img, description, minQuantity, availableQuantity, price } = tool;
+
+    const [user] = useAuthState(auth)
+
+
 
     const handleProceedCheckout = event => {
         event.preventDefault();
@@ -45,13 +51,13 @@ const CheckOut = () => {
                         <label class="label">
                             <span class="label-text">Your name</span>
                         </label>
-                        <input style={{ width: '600px' }} type="text" name='name' placeholder="Name" class="input input-bordered w-full max-w-xs" />
+                        <input style={{ width: '600px' }} type="text" name='name' value={user?.displayName} disabled class="input input-bordered w-full max-w-xs" />
                     </div>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">Your Email</span>
                         </label>
-                        <input style={{ width: '600px' }} type="email" name='email' placeholder="Email" class="input input-bordered w-full max-w-xs" />
+                        <input style={{ width: '600px' }} type="email" name='email' value={user?.email} disabled class="input input-bordered w-full max-w-xs" />
                     </div>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">

@@ -6,6 +6,8 @@ import CheckOut from './Pages/CheckOut/CheckOut';
 import Home from './Pages/Home/Home';
 import AllTools from './Pages/Items/AllTools';
 import Login from './Pages/Login/Login';
+import RequireAuth from './Pages/Login/RequireAuth';
+import SignUp from './Pages/Login/SignUp';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 
@@ -19,7 +21,10 @@ function App() {
         <Route path='/tools' element={<AllTools></AllTools>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/tool/:toolId' element={<CheckOut></CheckOut>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/tool/:toolId' element={
+          <RequireAuth><CheckOut></CheckOut></RequireAuth>
+        }></Route>
       </Routes>
 
       <Footer></Footer>
