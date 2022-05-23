@@ -11,7 +11,12 @@ const CheckOut = () => {
     const [tool, setTool] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${toolId}`)
+        fetch(`http://localhost:5000/tools/${toolId}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setTool(data))
     }, [toolId])
@@ -48,7 +53,8 @@ const CheckOut = () => {
             fetch('http://localhost:5000/order', {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(order)
             })
