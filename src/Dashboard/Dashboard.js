@@ -1,7 +1,10 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../firebase.init';
 
 const Dashboard = () => {
+
     return (
         <div>
             <div className="drawer drawer-mobile">
