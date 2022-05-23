@@ -11,7 +11,7 @@ const BusinessSummary = () => {
 
 
     return (
-        <div className="mb-28 mt-8 bg-[url('/src/images/background.png')]">
+        <div className="mb-24 mt-8 pb-8 bg-[url('/src/images/background.png')]">
             <div className='py-5'>
                 <h2 className='text-4xl flex justify-center text-teal-500 font-bold uppercase'>Millions Users & Business Trust Us</h2>
                 <h3 className='text-2xl flex justify-center'>We Try to Understand Users Expectation</h3>

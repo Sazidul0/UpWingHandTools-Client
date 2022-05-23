@@ -6,7 +6,7 @@ const Tool = ({ tool }) => {
     const navigate = useNavigate();
 
     const navigateToToolDetails = id => {
-        navigate(`tool/${id}`)
+        navigate(`/tool/${id}`);
     }
 
     return (
@@ -17,7 +17,7 @@ const Tool = ({ tool }) => {
                 <p><b>Description:</b>{description}</p>
                 <p><b>Minimum Quantity:</b> {minQuantity}</p>
                 <p><b>Available Quantity:</b> {availableQuantity}</p>
-                <p><b>Price:</b> {price}</p>
+                <p><b>Price Per Unit:</b> ${price}</p>
                 <div class="card-actions justify-end">
                     <button onClick={() => navigateToToolDetails(_id)} class="btn bg-gradient-to-r from-zinc-600 to-zinc-900 border-0">Buy Now</button>
                 </div>
