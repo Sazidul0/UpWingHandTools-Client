@@ -32,7 +32,7 @@ const MyOrders = () => {
     }, [user])
 
     return (
-        <div className='ml-5'>
+        <div className='mx-4'>
             <h2 className='text-2xl flex justify-center my-3'>My Orders: {order.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">

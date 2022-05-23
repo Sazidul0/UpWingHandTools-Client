@@ -14,6 +14,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Dashboard/Dashboard';
 import MyOrders from './Dashboard/MyOrders';
+import PaidOrders from './Dashboard/PaidOrders';
+import UnPaidOrders from './Dashboard/UnPaidOrders';
+import AllUsers from './Dashboard/AllUsers';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
         }></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyOrders />}></Route>
+          <Route path='paid' element={<PaidOrders />}></Route>
+          <Route path='unpaid' element={<UnPaidOrders />}></Route>
+          <Route path='users' element={<AllUsers />}></Route>
         </Route>
       </Routes>
 
