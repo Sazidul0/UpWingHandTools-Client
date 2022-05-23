@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
@@ -23,13 +24,41 @@ const CheckOut = () => {
 
     const handleProceedCheckout = event => {
         event.preventDefault();
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const quantity = event.target.quantity.value;
-        const address = event.target.address.value;
-        const phone = event.target.phone.value;
+        const UserQuantity = event.target.quantity.value;
 
-        console.log(name, email, quantity, address, phone)
+        const order = {
+            orderId: _id,
+            order: name,
+            user: event.target.email.value,
+            userName: event.target.name.value,
+            quantity: UserQuantity,
+            address: event.target.address.value,
+            phone: event.target.phone.value
+        }
+
+        if (minQuantity > UserQuantity) {
+            toast.error(`You have to select Minimun Quanity: ${minQuantity}`)
+        }
+        else if (UserQuantity > availableQuantity) {
+            toast.error(`You can't Selet more than ${availableQuantity}`)
+        }
+
+        else {
+
+            fetch('http://localhost:5000/order', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(order)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        toast.success(`Your order is comfirmed. Please pay: $${price * UserQuantity} to complete your order`)
+                    }
+                })
+        }
     }
 
     return (
