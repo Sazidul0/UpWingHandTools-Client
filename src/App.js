@@ -12,6 +12,8 @@ import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Dashboard/Dashboard';
+import MyOrders from './Dashboard/MyOrders';
 
 function App() {
   return (
@@ -27,6 +29,9 @@ function App() {
         <Route path='/tool/:toolId' element={
           <RequireAuth><CheckOut></CheckOut></RequireAuth>
         }></Route>
+        <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index element={<MyOrders />}></Route>
+        </Route>
       </Routes>
 
       <Footer></Footer>
