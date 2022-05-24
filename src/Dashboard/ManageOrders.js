@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import auth from '../firebase.init';
 import Loading from '../Pages/Shared/Loading';
+import { toast } from 'react-toastify';
 
 const ManageOrders = () => {
 
@@ -32,35 +33,46 @@ const ManageOrders = () => {
 
 
 
-    const handlePanding = id => {
-
-        fetch(`http://localhost:5000/allorder/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        }).then(res => res.json())
-            .then(data => {
-                refetch();
-                // console.log(data)
-            })
+    const handlePanding = (id, name) => {
+        const confirmation = window.confirm("Want to ship this Product?")
+        if (confirmation) {
+            fetch(`http://localhost:5000/allorder/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            }).then(res => res.json())
+                .then(data => {
+                    refetch();
+                    toast.success(`Successfully shipped ${name}`)
+                })
+        }
+        else {
+            toast.error(`Failed t shipped ${name}`)
+        }
     }
 
 
 
-    const handleDelete = id => {
-        fetch(`http://localhost:5000/allorder/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        }).then(res => res.json())
-            .then(data => {
-                refetch();
-                // console.log(data)
-            })
+    const handleDelete = (id, name) => {
+        const confirmation = window.confirm("Delete this product");
+        if (confirmation) {
+            fetch(`http://localhost:5000/allorder/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            }).then(res => res.json())
+                .then(data => {
+                    refetch();
+                    toast.success(`Successfully deleted ${name}`)
+                })
+        }
+        else {
+            toast.error(`Failed to delete ${name}`)
+        }
     }
 
     return (
@@ -93,10 +105,10 @@ const ManageOrders = () => {
                                 <td>{a.address}</td>
                                 <td>{a.phone}</td>
                                 <td>
-                                    {(a.price && !a.paid) && <div><span className='font-bold mr-5'>UnPaid</span><button onClick={() => handleDelete(a._id)} className='btn btn-xs btn-error'>Delete</button></div>}
+                                    {(a.price && !a.paid) && <div><span className='font-bold mr-5'>UnPaid</span><button onClick={() => handleDelete(a._id, a.order)} className='btn btn-xs btn-error'>Delete</button></div>}
 
                                     {(a.price && a.paid === 'panding') && <div>
-                                        <p><button onClick={() => handlePanding(a._id)} className='btn btn-xs btn-success'>Panding</button></p>
+                                        <p><button onClick={() => handlePanding(a._id, a.order)} className='btn btn-xs btn-success'>Panding</button></p>
 
                                     </div>}
                                     {(a.price && a.paid === 'paid') && <div>
