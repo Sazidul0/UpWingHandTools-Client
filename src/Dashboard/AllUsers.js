@@ -16,8 +16,8 @@ const AllUsers = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-2xl'>All Users: {users.length}</h2>
-            <div className="overflow-x-auto">
+            <h2 className='text-2xl flex justify-center'>All Users: {users.length}</h2>
+            <div className="overflow-x-auto mx-5">
                 <table className="table w-full">
 
                     <thead>
@@ -30,7 +30,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <UserRow key={user._id} user={user} setUsers={setUsers}></UserRow>)
+                            users.map((user, index) => <UserRow key={user._id} user={user} index={index} setUsers={setUsers}></UserRow>)
                         }
                     </tbody>
                 </table>

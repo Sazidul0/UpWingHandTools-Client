@@ -65,7 +65,7 @@ const CheckOut = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.acknowledged) {
-                        toast.success(`Your order is comfirmed. Please pay: $${price * UserQuantity} to complete your order`)
+                        toast.success(`Your order is placed. Please pay: $${price * UserQuantity} to complete your order`)
                     }
                 })
         }
