@@ -8,6 +8,7 @@ const Dashboard = () => {
 
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
+    // console.log(user);
 
     return (
         <div>
@@ -22,11 +23,17 @@ const Dashboard = () => {
                     <label for="dashboard-sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-50 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <li><Link to="/dashboard">My Orders</Link></li>
-                        <li><Link to="/dashboard/paid">Paid Orders</Link></li>
-                        <li><Link to="/dashboard/unpaid">Unpaid Orders</Link></li>
+                        <li><Link to="/dashboard/">My Profile</Link></li>
 
-                        {admin && <li><Link to="/dashboard/users">All Users</Link></li>}
+                        {!admin && <> <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                            <li><Link to="/dashboard/review">Add A Review</Link></li> </>}
+
+                        {admin && <>
+                            <li><Link to="/dashboard/users">Make Admin</Link></li>
+                            <li><Link to="/dashboard/manageorder">Manage Orders</Link></li>
+                            <li><Link to="/dashboard/addproduct">Add a Product</Link></li>
+                            <li><Link to="/dashboard/manageproduct">Manage Products</Link></li>
+                        </>}
 
                     </ul>
 

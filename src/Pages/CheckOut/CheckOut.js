@@ -25,6 +25,7 @@ const CheckOut = () => {
 
     const [user] = useAuthState(auth)
 
+    const [disableBtn, setDisableBtn] = useState(false);
 
 
     const handleProceedCheckout = event => {
@@ -38,14 +39,17 @@ const CheckOut = () => {
             userName: event.target.name.value,
             quantity: UserQuantity,
             address: event.target.address.value,
-            phone: event.target.phone.value
+            phone: event.target.phone.value,
+            price: UserQuantity * price
         }
 
         if (minQuantity > UserQuantity) {
             toast.error(`You have to select Minimun Quanity: ${minQuantity}`)
+            setDisableBtn(true);
         }
         else if (UserQuantity > availableQuantity) {
             toast.error(`You can't Selet more than ${availableQuantity}`)
+            setDisableBtn(true);
         }
 
         else {
@@ -98,7 +102,7 @@ const CheckOut = () => {
                         <label class="label">
                             <span class="label-text">Quantity</span>
                         </label>
-                        <input style={{ width: '600px' }} type="number" name='quantity' placeholder="Quantity" class="input input-bordered w-full max-w-xs" required />
+                        <input style={{ width: '600px' }} type="number" name='quantity' defaultValue={minQuantity} class="input input-bordered w-full max-w-xs" required />
                     </div>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
@@ -113,7 +117,7 @@ const CheckOut = () => {
                         <input style={{ width: '600px' }} type="number" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" required />
                     </div>
 
-                    <input type="submit" className='btn bg-gradient-to-r from-zinc-600 to-zinc-900 border-0 mt-6 mb-12' value="Proceed Checkout" />
+                    <input disabled={disableBtn} type="submit" className='btn bg-gradient-to-r from-zinc-600 to-zinc-900 border-0 mt-6 mb-12' value="Proceed Checkout" />
                 </form>
             </div>
         </div>
