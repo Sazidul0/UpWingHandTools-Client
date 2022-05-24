@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
+
+import { useQuery } from 'react-query';
 import UserRow from './UserRow';
+import Loading from '../Pages/Shared/Loading';
 
 const AllUsers = () => {
-    const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/user', {
-            method: 'GET',
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, [])
+
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <h2 className='text-2xl flex justify-center'>All Users: {users.length}</h2>
@@ -30,7 +33,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <UserRow key={user._id} user={user} index={index} setUsers={setUsers}></UserRow>)
+                            users.map((user, index) => <UserRow key={user._id} user={user} index={index} refetch={refetch}></UserRow>)
                         }
                     </tbody>
                 </table>
