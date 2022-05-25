@@ -76,8 +76,8 @@ const ManageOrders = () => {
     }
 
     return (
-        <div>
-            <h2 className='flex justify-center text-2xl'>All Orders: {order.length}</h2>
+        <div className='mb-20'>
+            <h2 className='flex justify-center text-2xl font-bold'>All Orders: {order.length}</h2>
             <div className="overflow-x-auto mx-5">
                 <table className="table w-full">
 

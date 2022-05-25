@@ -67,17 +67,17 @@ const Profile = () => {
         <div>
 
             <div className='grid sm:grid-cols-2 grid-cols-1 '>
-                <div class="card w-96 bg-gray-200 shadow-xl my-8 mx-auto">
+                <div className="card w-96 bg-gray-200 shadow-xl my-8 mx-auto">
                     <h2 className='text-2xl flex justify-center mb-5 mt-3'>My Profile</h2>
                     <figure>
-                        <div class="avatar online">
-                            <div class="w-28 rounded-full">
+                        <div className="avatar online">
+                            <div className="w-28 rounded-full">
                                 <img src={imageUrl} alt='User Img' />
                             </div>
                         </div>
                     </figure>
-                    <div class="card-body">
-                        <h2 class="card-title flex justify-center font-bold">{user.displayName}</h2>
+                    <div className="card-body">
+                        <h2 className="card-title flex justify-center font-bold">{user.displayName}</h2>
                         <p>Email: <b>{user?.email}</b></p>
                         <p>Address: <b>{updatedInfo?.address}</b></p>
                         <p>Address: <b>{updatedInfo?.education}</b></p>

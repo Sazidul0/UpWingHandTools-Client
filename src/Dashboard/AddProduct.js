@@ -55,11 +55,11 @@ const AddProduct = () => {
 
 
     return (
-        <div>
-            <h2 className='text-2xl flex justify-center mt-3'>Add a new Tool</h2>
-            <div className='flex justify-center mb-10'>
-                <form onSubmit={handleSubmit(onSubmit)} className="">
+        <div className='mt-5'>
 
+            <div className='flex justify-center mb-10'>
+                <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 px-20 pb-10 rounded-lg">
+                    <h2 className='text-2xl mt-3 flex justify-center font-bold'>Add a new Tool</h2>
 
 
                     {/* Name */}
@@ -100,7 +100,7 @@ const AddProduct = () => {
                                 type="text"
                                 placeholder="Description"
 
-                                class="textarea textarea-accent"
+                                className="textarea textarea-accent"
                                 {...register("description", {
                                     required: {
                                         value: true,

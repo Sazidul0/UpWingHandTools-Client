@@ -43,8 +43,8 @@ const SignUp = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="flex h-screen justify-center items-center bg-[url('/src/images/Banner/machine.jpg')]" >
+            <div className="card w-96 bg-gray-200 shadow-xl mx-6 my-10">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">SignUp</h2>
 

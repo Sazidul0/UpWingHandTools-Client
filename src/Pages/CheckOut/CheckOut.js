@@ -65,7 +65,8 @@ const CheckOut = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.acknowledged) {
-                        toast.success(`Your order is placed. Please pay: $${price * UserQuantity} to complete your order`)
+                        toast.success(`Your order is placed. Please pay: $${price * UserQuantity} to complete your order`);
+                        event.target.reset();
                     }
                 })
         }
@@ -73,10 +74,10 @@ const CheckOut = () => {
 
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 lg:ml-8'>
-            <div class="card w-100 bg-base-100 shadow-xl mb-8 mt-12">
+            <div className="card w-100 bg-base-100 shadow-xl mb-8 mt-12">
                 <figure><img className='w-1/2' src={img} alt="Shoes" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">{name}</h2>
+                <div className="card-body">
+                    <h2 className="card-title">{name}</h2>
                     <p><b>Description:</b>{description}</p>
                     <p><b>Minimum Quantity:</b> {minQuantity}</p>
                     <p><b>Available Quantity:</b> {availableQuantity}</p>
@@ -86,35 +87,35 @@ const CheckOut = () => {
 
             <div className='mt-10 mx-auto'>
                 <form className='' onSubmit={handleProceedCheckout}>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Your name</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Your name</span>
                         </label>
-                        <input style={{ width: '600px' }} type="text" name='name' value={user?.displayName} disabled class="input input-bordered w-full max-w-xs" />
+                        <input style={{ width: '600px' }} type="text" name='name' value={user?.displayName} disabled className="input input-bordered w-full max-w-xs" />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Your Email</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Your Email</span>
                         </label>
-                        <input style={{ width: '600px' }} type="email" name='email' value={user?.email} disabled class="input input-bordered w-full max-w-xs" />
+                        <input style={{ width: '600px' }} type="email" name='email' value={user?.email} disabled className="input input-bordered w-full max-w-xs" />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Quantity</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Quantity</span>
                         </label>
-                        <input style={{ width: '600px' }} type="number" name='quantity' defaultValue={minQuantity} class="input input-bordered w-full max-w-xs" required />
+                        <input style={{ width: '600px' }} type="number" name='quantity' defaultValue={minQuantity} className="input input-bordered w-full max-w-xs" required />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Address</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Address</span>
                         </label>
-                        <input style={{ width: '600px' }} type="text" name='address' placeholder="Address" class="input input-bordered w-full max-w-xs" required />
+                        <input style={{ width: '600px' }} type="text" name='address' placeholder="Address" className="input input-bordered w-full max-w-xs" required />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Phone</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Phone</span>
                         </label>
-                        <input style={{ width: '600px' }} type="number" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" required />
+                        <input style={{ width: '600px' }} type="number" name='phone' placeholder="Phone Number" className="input input-bordered w-full max-w-xs" required />
                     </div>
 
                     <input disabled={disableBtn} type="submit" className='btn bg-gradient-to-r from-zinc-600 to-zinc-900 border-0 mt-6 mb-12' value="Proceed Checkout" />

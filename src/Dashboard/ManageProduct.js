@@ -37,8 +37,8 @@ const ManageProduct = () => {
 
 
     return (
-        <div>
-            <h2 className='text-2xl flex justify-center'>Manage all Product: {tools.length}</h2>
+        <div className='mb-20'>
+            <h2 className='text-2xl font-bold py-2 flex justify-center'>Manage all Product: {tools.length}</h2>
 
             <div className="overflow-x-auto mx-5">
                 <table className="table w-full">
@@ -61,8 +61,8 @@ const ManageProduct = () => {
                             tools.map((tool, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{
-                                    <div class="avatar">
-                                        <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <div className="avatar">
+                                        <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                             <img src={tool.img} alt="Tool Img" />
                                         </div>
                                     </div>

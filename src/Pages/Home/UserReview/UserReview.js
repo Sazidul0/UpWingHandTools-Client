@@ -32,15 +32,15 @@ const UserReview = () => {
             <motion.div ref={carousel} whileTap={{ cursor: "grabbing" }} className="carousel">
                 <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className="inner-carousel">
                     {
-                        reviews.map(review => {
+                        reviews.map((review, index) => {
                             return (
-                                <motion.div className='item'>
+                                <motion.div className='item' key={index}>
 
 
 
-                                    <div className='bg-gray-200 rounded-lg'>
-                                        <div class="avatar flex justify-center py-5">
-                                            <div class=" w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <div className='bg-gray-200 rounded-lg shadow-lg'>
+                                        <div className="avatar flex justify-center py-5">
+                                            <div className=" w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                                 <img className='' src={review.img} alt="User1" />
                                             </div>
                                         </div>

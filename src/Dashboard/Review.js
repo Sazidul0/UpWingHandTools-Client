@@ -54,8 +54,8 @@ const Review = () => {
     }
 
     return (
-        <div className='flex justify-center'>
-            <form onSubmit={handleSubmit(onSubmit)} className=''>
+        <div className='flex justify-center mt-5'>
+            <form onSubmit={handleSubmit(onSubmit)} className='bg-gray-200 px-20 rounded-lg pb-10'>
                 <h2 className='text-2xl text-center mt-12'>Add a Review</h2>
                 {/* Name */}
                 <div className="form-control w-full max-w-xs">
@@ -143,7 +143,7 @@ const Review = () => {
                             type="text"
                             placeholder="Provide your Feedback"
 
-                            class="textarea textarea-accent"
+                            className="textarea textarea-accent"
                             {...register("feedback", {
                                 required: {
                                     value: true,
