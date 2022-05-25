@@ -67,8 +67,8 @@ const Profile = () => {
         <div>
 
             <div className='grid sm:grid-cols-2 grid-cols-1 '>
-                <div class="card w-96 bg-base-100 shadow-xl my-8 mx-auto">
-                    <h2 className='text-2xl flex justify-center mb-5'>My Profile</h2>
+                <div class="card w-96 bg-gray-200 shadow-xl my-8 mx-auto">
+                    <h2 className='text-2xl flex justify-center mb-5 mt-3'>My Profile</h2>
                     <figure>
                         <div class="avatar online">
                             <div class="w-28 rounded-full">
