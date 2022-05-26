@@ -1,7 +1,9 @@
+
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
@@ -16,11 +18,14 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
     const [token] = useToken(user || gUser)
     let from = location.state?.from?.pathname || "/";
+
+
 
     useEffect(() => {
         if (token) {
@@ -28,7 +33,7 @@ const Login = () => {
         }
     }, [token, from, navigate])
 
-    if (loading || gLoading) {
+    if (loading || gLoading || sending) {
         return <Loading></Loading>
     }
 
@@ -37,6 +42,18 @@ const Login = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
+    const resetPassword = async () => {
+        console.log(register)
+        // event.preventDefault();
+        // const email = emailRef.current.value;
+        // if (email) {
+        //     await sendPasswordResetEmail(email);
+        //     toast.success('Email Send');
+        // }
+        // else {
+        //     toast("Please enter your email address")
+        // }
+    }
 
     const onSubmit = data => {
         // console.log(data);
@@ -59,6 +76,7 @@ const Login = () => {
                             </label>
                             <input
                                 type="email"
+                                name='email'
                                 placeholder="Your Email"
                                 className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
@@ -71,6 +89,7 @@ const Login = () => {
                                         message: 'Provide a valid Email'
                                     }
                                 })}
+
                             />
                             <label className="label">
                                 {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
@@ -109,6 +128,8 @@ const Login = () => {
                         <input className='btn w-full max-w-xs text-white bg-gradient-to-r from-zinc-600 to-zinc-900 border-0' type="submit" value='Login' />
 
                     </form>
+
+                    <p className='text-center mt-2 '>Forget Password?<button onClick={resetPassword} className='btn btn-link mt-2 text-primary' to='/signup'> Reset Password</button></p>
 
                     <p>New to Upwing? <Link className='text-primary ' to='/signup'>Create New Account</Link></p>
 

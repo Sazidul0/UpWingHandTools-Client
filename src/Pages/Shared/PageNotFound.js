@@ -10,7 +10,7 @@ const PageNotFound = () => {
                     <img src={pageNotFound} alt="" />
                 </div>
                 <h2 className="text-5xl my-8 flex justify-center body-container">404 error</h2>
-                <Link to={'/'}><button class="btn btn-outline mb-16 btn-wide">Return Home</button></Link>
+                <Link to={'/'}><button className="btn btn-outline mb-16 btn-wide">Return Home</button></Link>
             </div>
         </div>
     );
