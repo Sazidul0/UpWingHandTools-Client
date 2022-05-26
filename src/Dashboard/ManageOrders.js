@@ -49,7 +49,7 @@ const ManageOrders = () => {
                 })
         }
         else {
-            toast.error(`Failed t shipped ${name}`)
+            toast.error(`Failed to shipped ${name}`)
         }
     }
 

@@ -11,7 +11,7 @@ import Loading from '../Shared/Loading';
 const Login = () => {
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -42,17 +42,19 @@ const Login = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
+
+    const wachEmail = watch("email", "text")
     const resetPassword = async () => {
-        console.log(register)
-        // event.preventDefault();
-        // const email = emailRef.current.value;
-        // if (email) {
-        //     await sendPasswordResetEmail(email);
-        //     toast.success('Email Send');
-        // }
-        // else {
-        //     toast("Please enter your email address")
-        // }
+        // console.log(wachEmail)
+
+        const email = wachEmail;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success('Email Send');
+        }
+        else {
+            toast("Please enter your email address")
+        }
     }
 
     const onSubmit = data => {

@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import Loading from '../Pages/Shared/Loading';
 
 const CheckoutForm = ({ order }) => {
@@ -97,8 +98,11 @@ const CheckoutForm = ({ order }) => {
                 body: JSON.stringify(payment)
             }).then(res => res.json())
                 .then(data => {
-                    setProcesing(false)
                     // console.log(data)
+                    setProcesing(false)
+                    if (data) {
+                        toast(`Your Payment is successfull `)
+                    }
                 })
         }
     }
