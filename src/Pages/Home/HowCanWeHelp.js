@@ -9,7 +9,7 @@ const HowCanWeHelp = () => {
             <div>
                 <h2 className='flex justify-center text-3xl text-teal-500 font-bold mt-12 lg:mt-3 mb-8'>HOW CAN WE HELP?</h2>
                 <div className=' grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                    <div className="card w-96 ">
+                    <div className="card w-100 ">
                         <figure><img src={contactUs} alt="Shoes" /></figure>
                         <div className="card-body ">
                             <div className='text-center'>
@@ -35,7 +35,7 @@ const HowCanWeHelp = () => {
                     </div>
 
 
-                    <div className="card w-96 ">
+                    <div className="card w-100 ">
                         <figure><img src={service} alt="Shoes" /></figure>
                         <div className="card-body ">
                             <div className='text-center'>

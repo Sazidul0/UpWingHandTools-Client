@@ -13,6 +13,7 @@ A Tools Manufacturer site [Upwing Hand Tools
 * The Dashboard is different for Genaral User and Admin
 * For user Dashboard will have My Profile, My Orders and Add a Review
 * For an Admin Dashboard will have My Profile, Make Admin, Manage Orders, Add a Product, Manage Product
+* The Rating Given by the user will be showed in the Home page
 
 
 
