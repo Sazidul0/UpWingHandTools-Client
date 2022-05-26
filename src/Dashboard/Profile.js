@@ -13,7 +13,7 @@ const Profile = () => {
     useEffect(() => {
         const email = user.email;
         // console.log(email)
-        fetch(`http://localhost:5000/profile/${email}`, {
+        fetch(`https://upwing-hand-tools.herokuapp.com/profile/${email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -36,7 +36,7 @@ const Profile = () => {
     const onSubmit = data => {
         // console.log(data);
         const email = user.email;
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://upwing-hand-tools.herokuapp.com/user/${email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -66,7 +66,7 @@ const Profile = () => {
     return (
         <div>
 
-            <div className='grid sm:grid-cols-2 grid-cols-1 '>
+            <div className='grid sm:grid-cols-2 grid-cols-1'>
                 <div className="card w-96 bg-gray-200 shadow-xl my-8 mx-auto">
                     <h2 className='text-2xl flex justify-center mb-5 mt-3'>My Profile</h2>
                     <figure>

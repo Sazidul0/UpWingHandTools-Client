@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { price, user, userName, _id } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://upwing-hand-tools.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -88,7 +88,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             }
             // update to backend
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://upwing-hand-tools.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

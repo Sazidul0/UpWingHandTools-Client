@@ -7,7 +7,7 @@ const ManageProduct = () => {
 
 
 
-    const url = 'http://localhost:5000/tools';
+    const url = 'https://upwing-hand-tools.herokuapp.com/tools';
     const { data: tools, isLoading, refetch } = useQuery(['order'], () => fetch(url,).then(res => res.json()))
 
     if (isLoading) {
@@ -18,7 +18,7 @@ const ManageProduct = () => {
     const handleDelete = id => {
         const confirmation = window.confirm("Do you want to delete?");
         if (confirmation) {
-            fetch(`http://localhost:5000/tools/${id}`, {
+            fetch(`https://upwing-hand-tools.herokuapp.com/tools/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

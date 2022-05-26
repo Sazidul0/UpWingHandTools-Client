@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 const ManageOrders = () => {
 
     const navigate = useNavigate();
-    const url = 'http://localhost:5000/allorder';
+    const url = 'https://upwing-hand-tools.herokuapp.com/allorder';
     const { data: order, isLoading, refetch } = useQuery(['order'], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -36,7 +36,7 @@ const ManageOrders = () => {
     const handlePanding = (id, name) => {
         const confirmation = window.confirm("Want to ship this Product?")
         if (confirmation) {
-            fetch(`http://localhost:5000/allorder/${id}`, {
+            fetch(`https://upwing-hand-tools.herokuapp.com/allorder/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -58,7 +58,7 @@ const ManageOrders = () => {
     const handleDelete = (id, name) => {
         const confirmation = window.confirm("Delete this product");
         if (confirmation) {
-            fetch(`http://localhost:5000/allorder/${id}`, {
+            fetch(`https://upwing-hand-tools.herokuapp.com/allorder/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

@@ -14,7 +14,7 @@ const MyOrders = () => {
 
     // useEffect(() => {
     //     if (user) {
-    //         fetch(`http://localhost:5000/order?user=${user.email}`, {
+    //         fetch(`https://upwing-hand-tools.herokuapp.com/order?user=${user.email}`, {
     //             method: 'GET',
     //             headers: {
     //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const MyOrders = () => {
     // }, [user])
 
 
-    const url = `http://localhost:5000/order?user=${user.email}`;
+    const url = `https://upwing-hand-tools.herokuapp.com/order?user=${user.email}`;
     const { data: order, isLoading, refetch } = useQuery(['order'], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -60,7 +60,7 @@ const MyOrders = () => {
     const handleDelete = (id, name) => {
         const confirmation = window.confirm("Delete this product");
         if (confirmation) {
-            fetch(`http://localhost:5000/allorder/${id}`, {
+            fetch(`https://upwing-hand-tools.herokuapp.com/allorder/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

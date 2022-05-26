@@ -30,7 +30,7 @@ const AddProduct = () => {
                         price: data.price
                     }
                     // Sending data to the database
-                    fetch(`http://localhost:5000/tools`, {
+                    fetch(`https://upwing-hand-tools.herokuapp.com/tools`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

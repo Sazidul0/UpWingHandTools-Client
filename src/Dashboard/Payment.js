@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L0nR1GypfIe6ms7JAJtszTGuRcc6YwHoiGsn
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://upwing-hand-tools.herokuapp.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

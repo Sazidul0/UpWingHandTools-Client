@@ -11,7 +11,7 @@ const CheckOut = () => {
     const [tool, setTool] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${toolId}`, {
+        fetch(`https://upwing-hand-tools.herokuapp.com/tools/${toolId}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -54,7 +54,7 @@ const CheckOut = () => {
 
         else {
 
-            fetch('http://localhost:5000/order', {
+            fetch('https://upwing-hand-tools.herokuapp.com/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

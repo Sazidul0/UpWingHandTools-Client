@@ -29,7 +29,7 @@ const Review = () => {
                 feedback: data.feedback
             }
             // console.log(review)
-            fetch(`http://localhost:5000/review`, {
+            fetch(`https://upwing-hand-tools.herokuapp.com/review`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
