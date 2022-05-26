@@ -1,0 +1,30 @@
+.protfolio-heading {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: xx-large;
+}
+
+.body-container {
+    font-family: 'Spline Sans Mono', monospace;
+}
+
+.web-dev-card-container {
+    top: 70%;
+    left: 35%;
+}
+
+
+
+/* Responsive */
+@media only screen and (max-width: 576px) {
+    .web-dev-card-container {
+        width: 290px;
+        left: 5px;
+        right: 5px;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .web-dev-card-container {
+        left: 25%;
+    }
+}
