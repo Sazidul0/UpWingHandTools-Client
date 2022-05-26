@@ -14,20 +14,21 @@ const MyPortfolio = () => {
 
 
     const { ref, inView } = useInView({
-        threshold: 0.2
+        threshold: 0,
     });
     const animation = useAnimation();
     useEffect(() => {
         if (inView) {
             animation.start({
-                x: 0,
+                // x: 0,
+                scale: 1,
                 transition: {
                     type: 'spring', duration: 1, bounce: 0.3
                 }
             })
         }
         if (!inView) {
-            animation.start({ x: '-100vw' })
+            animation.start({ scale: 0.9 })
         }
     }, [inView])
 
@@ -61,7 +62,7 @@ const MyPortfolio = () => {
                     </div>
 
 
-                    <motion.div className="card w-96 bg-base-100 shadow-xl mx-auto absolute web-dev-card-container "
+                    <motion.div className=" card w-96 bg-base-100 shadow-xl mx-auto absolute web-dev-card-container "
                         animate={animation}
                     >
                         <figure><img className='w-100 mt-8' src={webDevImg} alt="Wev dev" /></figure>
