@@ -11,7 +11,7 @@ const AllTool = ({ tool }) => {
     }
 
     return (
-        <div className="card w-100 bg-base-100 shadow-xl mx-5">
+        <div className="card w-100  bg-base-100 shadow-xl mx-5">
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>

@@ -31,3 +31,11 @@
     overflow: hidden;
     /* background-color: rgb(235, 99, 99); */
 }
+
+
+/* Responsive */
+/* @media only screen and (max-width: 576px) {
+    .carousel {
+        cursor: auto !important;
+    }
+} */
